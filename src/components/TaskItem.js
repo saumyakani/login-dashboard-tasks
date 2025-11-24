@@ -6,7 +6,6 @@ function TaskItem({ task, editTask, deleteTask }) {
     const [isEditing, setIsEditing] = useState(false);
     const [editText, setEditText] = useState(task.task);
     const [error, setError] = useState('');
-
     const handleEditSave = () => {
         if (editText.trim().length < 5) {
             setError('Task must be at least 5 characters long.');
@@ -24,12 +23,8 @@ function TaskItem({ task, editTask, deleteTask }) {
         setEditText(task.task);
         setError('');
     };
-    
-   
     const displayTime = task.modified ? formatTimeDifference(task.modified) : formatDateTime(task.created);
     const timeLabel = task.modified ? 'Last Modified' : 'Created';
-
-
     return (
         <li className="task-item">
             {isEditing ? (

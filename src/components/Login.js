@@ -9,16 +9,9 @@ function Login({ onLoginSuccess }) {
     const handleLogin = () => {
         setIsLoading(true);
         setStatus('Capturing device and location data...');
-
         const eventData = {};
-        
-     
         eventData.timestamp = new Date().toISOString();
-
-    
         eventData.deviceDetails = getDeviceDetails(navigator.userAgent);
-        
-    
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
@@ -46,7 +39,6 @@ function Login({ onLoginSuccess }) {
             onLoginSuccess(eventData); 
         }
     };
-
     return (
         <div className="login-container">
             <h1>Login Simulation</h1>

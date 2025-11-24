@@ -11,7 +11,6 @@ function TaskForm({ addTask }) {
             setTaskText('');
         }
     };
-
     return (
         <form onSubmit={handleSubmit} className="task-form">
             <input
